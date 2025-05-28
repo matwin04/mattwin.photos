@@ -6,7 +6,7 @@ import dotenv from "dotenv";
 import { engine } from "express-handlebars";
 import session from 'express-session';
 import { fileURLToPath } from "url";
-//import { sql, setupDB } from "./db.js";
+import { sql, setupDB } from "./db.js";
 import bcrypt from "bcrypt";
 dotenv.config();
 
@@ -37,29 +37,18 @@ app.use(
     })
 );
 // DB Function
-function setupDB() {
-    console.log("MongoDB connection");
-}
+
 setupDB();
 // Routes
 app.get("/", (req, res) => {
     res.render("index", { title: "Thing Token" });
 });
-app.get("/about", (req, res) => {
-    res.render("about", { title: "About" });
-});
-app.get("/blog", async (req, res) => {
-    //const posts = await sql`SELECT * FROM blogposts ORDER BY created_at DESC`;
-    res.render("blog", { title: "Blog", posts });
+
+app.get("/cameras", async (req, res) => {
+    const cameras = await sql`SELECT * FROM cameras`;
+    res.render("cameras", { title: "Cameras", cameras });
 });
 
-app.get("/blog/:id", async (req, res) => {
-    const id = req.params.id;
-    const blogPost = await sql(`SELECT *
-                                FROM blogposts
-                                WHERE id = ${id}`);
-    res.render("blog", { title: "Blog", blogPost });
-});
 // Start server
 app.listen(PORT, () => {
     console.log(`🚀 Server running at http://localhost:${PORT}`);

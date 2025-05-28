@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Cameras</title>
+    </head>
+    <body>
+        {{>navbar}}
+        <header>
+            <h2>Cameras</h2>
+        </header>
+
+
+        <section>
+            <table>
+                <thead>
+                <tr>
+                    <th>Camera Make</th>
+                    <th>Camera Model</th>
+                    <th>Type</th>
+                    <th>Year</th>
+                    <th>Storage/Media Fromat</th>
+                </tr>
+                </thead>
+                <tbody>
+                {{#each cameras}}
+                <tr>
+                    <td>{{make}}</td>
+                    <td>{{model}}</td>
+                    <td>{{type}}</td>
+                    <td>{{year}}</td>
+                    <td>{{format}}</td>
+                </tr>
+                {{/each}}
+                </tbody>
+            </table>
+        </section>
+
+    </body>
+</html>
