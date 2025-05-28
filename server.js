@@ -5,7 +5,7 @@ import multer from "multer";
 import dotenv from "dotenv";
 import { engine } from "express-handlebars";
 import session from 'express-session';
-//import { fileURLToPath } from "url";
+import { fileURLToPath } from "url";
 //import { sql, setupDB } from "./db.js";
 import bcrypt from "bcrypt";
 dotenv.config();
@@ -37,7 +37,9 @@ app.use(
     })
 );
 // DB Function
-
+function setupDB() {
+    console.log("MongoDB connection");
+}
 setupDB();
 // Routes
 app.get("/", (req, res) => {
