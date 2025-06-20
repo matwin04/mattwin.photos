@@ -17,6 +17,15 @@ async function setupDB() {
                 year TEXT,
                 format TEXT
             )`;
+        await sql`
+            CREATE TABLE IF NOT EXISTS photos (
+                id SERIAL PRIMARY KEY,
+                immich_id TEXT NOT NULL,
+                filename TEXT NOT NULL,
+                camera TEXT,
+                date TIMESTAMP,
+                description TEXT
+            )`;
         } catch (error) {
             console.log(error);
     }
