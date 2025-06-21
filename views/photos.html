@@ -1,32 +1,29 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Photography</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
-    <link rel="icon" href="/public/images/m.svg" />
-    <link rel="stylesheet" href="/public/styles/main.css" />
-</head>
-<body>
-<div class="container">
-    {{>navbar}}
-    <div class="jumbotron">
-        <h1>Photos</h1>
-        <p>This is where I post all of my photo works</p>
-    </div>
+    <head>
+        <meta charset="UTF-8" />
+        <title>Photography</title>
+        <link rel="icon" href="/public/images/m.svg" />
+        <link rel="stylesheet" href="/public/styles/main.css" />
+    </head>
+    <body>
+        <div class="container">
+            {{> navbar }}
+            <header class="hero">
+                <h1>Photos</h1>
+                <p>This is where I post all of my photo works</p>
+            </header>
 
-    <div class="row row-cols-1 row-cols-md-4 g-4">
-        {{#each photos}}
-        <div class="col">
-            <div class="card h-100 text-center">
-                <img src="/api/photos/{{immich_id}}" class="card-img-top" alt="BROKEN">
-                <div class="card-body">
-                    <h5 class="card-title">{{filename}}</h5>
+            <section class="photo-grid">
+                {{#each photos}}
+                <div class="photo-card">
+                    <img src="/api/photos/{{immich_id}}" alt="BROKEN" />
+                    <div class="photo-info">
+                        <h5>{{filename}}</h5>
+                    </div>
                 </div>
-            </div>
+                {{/each}}
+            </section>
         </div>
-        {{/each}}
-    </div>
-</div>
-</body>
+    </body>
+</html>
