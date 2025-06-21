@@ -1,29 +1,30 @@
 <!doctype html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <title>Photography</title>
-        <link rel="icon" href="/public/images/m.svg" />
-        <link rel="stylesheet" href="/public/styles/main.css" />
-    </head>
-    <body>
-        <div class="container">
-            {{> navbar }}
-            <header class="hero">
-                <h1>Photos</h1>
-                <p>This is where I post all of my photo works</p>
-            </header>
+<head>
+    <meta charset="UTF-8" />
+    <title>Photography</title>
+    <link rel="icon" href="/public/images/m.svg" />
+    <link rel="stylesheet" href="/public/styles/main.css" />
+</head>
+<body>
+<div class="container">
+    {{> navbar }}
+    <header class="hero">
+        <h1>Photos</h1>
+        <p>This is where I post all of my photo works</p>
+    </header>
 
-            <section class="photo-grid">
-                {{#each photos}}
-                <div class="photo-card">
-                    <img src="/api/photos/{{immich_id}}" alt="BROKEN" />
-                    <div class="photo-info">
-                        <h5>{{filename}}</h5>
-                    </div>
-                </div>
-                {{/each}}
-            </section>
+    <section class="photo-grid">
+        {{#each photos}}
+        <div class="photo-card">
+            <img src="/api/photos/{{immich_id}}" alt="BROKEN" />
+            <div class="photo-info">
+                <h5>{{filename}}</h5>
+            </div>
         </div>
-    </body>
+        {{/each}}
+    </section>
+</div>
+{{> footer}}
+</body>
 </html>

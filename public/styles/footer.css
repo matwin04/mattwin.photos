@@ -1,0 +1,19 @@
+.fa {
+    color: orange;
+    padding: 20px;
+    width: 50px;
+    text-align: center;
+    text-decoration: none;
+    margin: 5px 2px;
+}
+.fa:hover {
+    opacity: 0.8;
+}
+.socialbuttons {
+    display: flex;
+    justify-content: center;
+}
+
+#copyright {
+    text-align: center;
+}

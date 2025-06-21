@@ -4,9 +4,18 @@
     <meta charset="UTF-8" />
     <title>Title</title>
     <link href="/public/styles/main.css" rel="stylesheet" />
-      <link rel="icon" href="/public/images/m.svg" />
+    <link rel="icon" href="/public/images/m.svg" />
   </head>
   <body>
-    {{> navbar}}
+    <div class="container">
+      {{> navbar}}
+
+      <header class="hero">
+        <h2>Welcome</h2>
+        <p>This is my personal photography portfolio where you can see some of my best work</p>
+        <a href="/photos">Click here to see my photos</a>
+      </header>
+      {{> footer}}
+    </div>
   </body>
 </html>
